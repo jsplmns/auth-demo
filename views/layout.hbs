@@ -5,6 +5,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+  <ul>
+    <li><a href="/auth/login">Log in</a></li>
+    <li><a href="/auth/signup">Sign up</a></li>
+    <li>
+    <form method="POST" action="/auth/logout">
+      <button type="submit">Log out</button>
+    </form>
+       </li>
+      </ul>
     {{{body}}}
   </body>
 </html>

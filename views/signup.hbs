@@ -1,0 +1,18 @@
+<h1>Sign up</h1>
+<form action="/auth/signup" method="post">
+  <div class="field">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Your username" value="{{fields.username}}">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password" >  
+  </div>
+  <div class="field submit">
+    <button> Submit</button>
+    {{#if message}}
+      <p class="validation">{{message}}</p>
+    {{/if}}
+  </div>
+
+</form>

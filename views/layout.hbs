@@ -5,15 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-  <ul>
-    <li><a href="/auth/login">Log in</a></li>
-    <li><a href="/auth/signup">Sign up</a></li>
-    <li>
-    <form method="POST" action="/auth/logout">
-      <button type="submit">Log out</button>
-    </form>
-       </li>
-      </ul>
+    <ul>
+      {{#unless currentUser}}
+        <li><a href="/auth/login">Log in</a></li>
+        <li><a href="/auth/signup">Sign up</a></li>
+      {{/unless}}
+      {{#if currentUser}}
+      <li>
+        <p>current user is: {{currentUser.username}}</p>
+        <form method="POST" action="/auth/logout">
+          <button type="submit">Log out</button>
+        </form>
+      </li>
+      {{/if}}
+    </ul>
     {{{body}}}
   </body>
 </html>
